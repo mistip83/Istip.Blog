@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istip.Blog.API", "Istip.Blog.API\Istip.Blog.API.csproj", "{62BFE65C-27EF-4A17-809E-6583377166B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62BFE65C-27EF-4A17-809E-6583377166B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62BFE65C-27EF-4A17-809E-6583377166B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62BFE65C-27EF-4A17-809E-6583377166B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62BFE65C-27EF-4A17-809E-6583377166B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4CC2162-0F37-4A7C-8C0D-2B23E654F620}
+	EndGlobalSection
+EndGlobal
