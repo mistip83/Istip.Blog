@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Istip.Blog.API.DataAccess;
 using Istip.Blog.API.Data;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 
 namespace Istip.Blog.API
 {
@@ -47,10 +41,10 @@ namespace Istip.Blog.API
             services.AddMvc(x => x.EnableEndpointRouting = false);
 
             // In production, the Angular files will be served from this directory
-            //services.AddSpaStaticFiles(configuration =>
-            //{
-            //    configuration.RootPath = "ClientApp/dist";
-            //});
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,7 +63,7 @@ namespace Istip.Blog.API
             app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //app.UseSpaStaticFiles();
+            app.UseSpaStaticFiles();
 
             app.UseMvc(routes =>
             {
@@ -78,18 +72,18 @@ namespace Istip.Blog.API
                     template: "{controller}/{action=Index}/{id?}");
             });
 
-            //app.UseSpa(spa =>
-            //{
-            //    // To learn more about options for serving an Angular SPA from ASP.NET Core,
-            //    // see https://go.microsoft.com/fwlink/?linkid=864501
+            app.UseSpa(spa =>
+            {
+                // to learn more about options for serving an angular spa from asp.net core,
+                // see https://go.microsoft.com/fwlink/?linkid=864501
 
-            //    spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = "clientapp";
 
-            //    if (env.IsDevelopment())
-            //    {
-            //        spa.UseAngularCliServer(npmScript: "start");
-            //    }
-            //});
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+            });
         }
     }
 }
